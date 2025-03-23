@@ -25,6 +25,8 @@ func (g GeneratorAttributes) AttributeTypes() (map[string]string, error) {
 			attributeTypes[k] = "Bool"
 		case GeneratorFloat64Attribute:
 			attributeTypes[k] = "Float64"
+		case GeneratorInt32Attribute:
+			attributeTypes[k] = "Int32"
 		case GeneratorInt64Attribute:
 			attributeTypes[k] = "Int64"
 		case GeneratorListAttribute:
@@ -233,7 +235,6 @@ func (g GeneratorAttributes) Schema() (string, error) {
 		if !strings.HasPrefix(str, "\n") {
 			str = "\n" + str
 		}
-
 		s.WriteString(str)
 	}
 

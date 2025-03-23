@@ -45,6 +45,12 @@ func (e ElementType) ElementType() []byte {
 		} else {
 			b.WriteString("types.Int64Type")
 		}
+	case e.elementType.Int32 != nil:
+		if e.elementType.Int32.CustomType != nil {
+			b.WriteString(e.elementType.Int32.CustomType.Type)
+		} else {
+			b.WriteString("types.Int32Type")
+		}
 	case e.elementType.List != nil:
 		if e.elementType.List.CustomType != nil {
 			b.WriteString(e.elementType.List.CustomType.Type)

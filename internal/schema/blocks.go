@@ -109,6 +109,8 @@ func (g GeneratorBlocks) FromFuncs() map[string]string {
 			fromFuncs[k] = "BoolPointerValue"
 		case GeneratorFloat64Attribute:
 			fromFuncs[k] = "Float64PointerValue"
+		case GeneratorInt32Attribute:
+			fromFuncs[k] = "Int32PointerValue"
 		case GeneratorInt64Attribute:
 			fromFuncs[k] = "Int64PointerValue"
 		case GeneratorNumberAttribute:
@@ -177,6 +179,8 @@ func (g GeneratorBlocks) ToFuncs() map[string]string {
 			toFuncs[k] = "ValueBoolPointer"
 		case GeneratorFloat64Attribute:
 			toFuncs[k] = "ValueFloat64Pointer"
+		case GeneratorInt32Attribute:
+			toFuncs[k] = "ValueInt32Pointer"
 		case GeneratorInt64Attribute:
 			toFuncs[k] = "ValueInt64Pointer"
 		case GeneratorNumberAttribute:

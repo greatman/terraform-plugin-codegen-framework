@@ -36,6 +36,12 @@ func GetAttrTypes(attrTypes specschema.ObjectAttributeTypes) string {
 			} else {
 				aTypes.WriteString("types.Float64Type")
 			}
+		case v.Int32 != nil:
+			if v.Int32.CustomType != nil {
+				aTypes.WriteString(v.Int32.CustomType.Type)
+			} else {
+				aTypes.WriteString("types.Int32Type")
+			}
 		case v.Int64 != nil:
 			if v.Int64.CustomType != nil {
 				aTypes.WriteString(v.Int64.CustomType.Type)
@@ -109,6 +115,11 @@ func GetAttrTypesToFuncs(a specschema.ObjectAttributeTypes) (map[string]AttrType
 				AttrValue: "types.Float64",
 				ToFunc:    "ValueFloat64Pointer",
 			}
+		case v.Int32 != nil:
+			attrTypesFuncs[v.Name] = AttrTypesToFuncs{
+				AttrValue: "types.Int32",
+				ToFunc:    "ValueInt32Pointer",
+			}
 		case v.Int64 != nil:
 			attrTypesFuncs[v.Name] = AttrTypesToFuncs{
 				AttrValue: "types.Int64",
@@ -151,6 +162,8 @@ func GetAttrTypesFromFuncs(a specschema.ObjectAttributeTypes) (map[string]string
 			attrTypesFuncs[v.Name] = "types.BoolPointerValue"
 		case v.Float64 != nil:
 			attrTypesFuncs[v.Name] = "types.Float64PointerValue"
+		case v.Int32 != nil:
+			attrTypesFuncs[v.Name] = "types.Int32PointerValue"
 		case v.Int64 != nil:
 			attrTypesFuncs[v.Name] = "types.Int64PointerValue"
 		case v.List != nil:

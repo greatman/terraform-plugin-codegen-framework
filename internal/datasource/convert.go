@@ -88,6 +88,8 @@ func NewAttribute(a datasource.Attribute) (generatorschema.GeneratorAttribute, e
 		return NewGeneratorBoolAttribute(a.Name, a.Bool)
 	case a.Float64 != nil:
 		return NewGeneratorFloat64Attribute(a.Name, a.Float64)
+	case a.Int32 != nil:
+		return NewGeneratorInt32Attribute(a.Name, a.Int32)
 	case a.Int64 != nil:
 		return NewGeneratorInt64Attribute(a.Name, a.Int64)
 	case a.List != nil:

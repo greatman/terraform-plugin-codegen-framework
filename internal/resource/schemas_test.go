@@ -46,6 +46,16 @@ func TestGeneratorResourceSchemas_ModelsBytes(t *testing.T) {
 								"",
 							),
 						},
+						"int32_attribute": GeneratorInt32Attribute{},
+						"int32_attribute_custom": GeneratorInt32Attribute{
+							CustomType: convert.NewCustomTypePrimitive(
+								&schema.CustomType{
+									ValueType: "my_int32_value_type",
+								},
+								nil,
+								"",
+							),
+						},
 						"int64_attribute": GeneratorInt64Attribute{},
 						"int64_attribute_custom": GeneratorInt64Attribute{
 							CustomType: convert.NewCustomTypePrimitive(
