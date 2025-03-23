@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/hashicorp/terraform-plugin-codegen-spec/schema"
+	"github.com/greatman/terraform-plugin-codegen-spec/schema"
 
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/convert"
 	generatorschema "github.com/hashicorp/terraform-plugin-codegen-framework/internal/schema"

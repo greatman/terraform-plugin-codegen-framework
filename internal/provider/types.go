@@ -4,7 +4,7 @@
 package provider
 
 import (
-	specschema "github.com/hashicorp/terraform-plugin-codegen-spec/schema"
+	specschema "github.com/greatman/terraform-plugin-codegen-spec/schema"
 
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/schema"
 )

@@ -6,8 +6,8 @@ package datasource
 import (
 	"fmt"
 
-	"github.com/hashicorp/terraform-plugin-codegen-spec/datasource"
-	"github.com/hashicorp/terraform-plugin-codegen-spec/spec"
+	"github.com/greatman/terraform-plugin-codegen-spec/datasource"
+	"github.com/greatman/terraform-plugin-codegen-spec/spec"
 
 	generatorschema "github.com/hashicorp/terraform-plugin-codegen-framework/internal/schema"
 )

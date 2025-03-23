@@ -12,8 +12,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/hashicorp/terraform-plugin-codegen-spec/code"
-	specschema "github.com/hashicorp/terraform-plugin-codegen-spec/schema"
+	"github.com/greatman/terraform-plugin-codegen-spec/code"
+	specschema "github.com/greatman/terraform-plugin-codegen-spec/schema"
 
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/logging"
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/model"
@@ -353,6 +353,8 @@ func ElementTypeString(elementType specschema.ElementType) (string, error) {
 		return "types.BoolType", nil
 	case elementType.Float64 != nil:
 		return "types.Float64Type", nil
+	case elementType.Int32 != nil:
+		return "types.Int32Type", nil
 	case elementType.Int64 != nil:
 		return "types.Int64Type", nil
 	case elementType.List != nil:
@@ -398,6 +400,8 @@ func ElementTypeGoType(elementType specschema.ElementType) (string, error) {
 		return "*bool", nil
 	case elementType.Float64 != nil:
 		return "*float64", nil
+	case elementType.Int32 != nil:
+		return "*int32", nil
 	case elementType.Int64 != nil:
 		return "*int64", nil
 	case elementType.List != nil:
@@ -426,6 +430,8 @@ func AttrTypesString(attrTypes specschema.ObjectAttributeTypes) (string, error) 
 			attrTypesStr = append(attrTypesStr, fmt.Sprintf("%q: types.BoolType", v.Name))
 		case v.Float64 != nil:
 			attrTypesStr = append(attrTypesStr, fmt.Sprintf("%q: types.Float64Type", v.Name))
+		case v.Int32 != nil:
+			attrTypesStr = append(attrTypesStr, fmt.Sprintf("%q: types.Int32Type", v.Name))
 		case v.Int64 != nil:
 			attrTypesStr = append(attrTypesStr, fmt.Sprintf("%q: types.Int64Type", v.Name))
 		case v.List != nil:

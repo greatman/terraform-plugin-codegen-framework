@@ -1,0 +1,6 @@
+
+func (t {{.Name}}Type) ValueFromInt32(ctx context.Context, in basetypes.Int32Value) (basetypes.Int32Valuable, diag.Diagnostics) {
+return {{.Name}}Value{
+Int32Value: in,
+}, nil
+}

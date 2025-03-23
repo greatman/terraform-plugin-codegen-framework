@@ -7,7 +7,7 @@ import (
 	"errors"
 	"fmt"
 
-	specschema "github.com/hashicorp/terraform-plugin-codegen-spec/schema"
+	specschema "github.com/greatman/terraform-plugin-codegen-spec/schema"
 )
 
 // GetElementType generates the strings for use within templates for specifying the types to use with
@@ -29,6 +29,11 @@ func GetElementType(e specschema.ElementType) string {
 			return e.Int64.CustomType.Type
 		}
 		return "types.Int64Type"
+	case e.Int32 != nil:
+		if e.Int32.CustomType != nil {
+			return e.Int32.CustomType.Type
+		}
+		return "types.Int32Type"
 	case e.List != nil:
 		if e.List.CustomType != nil {
 			return fmt.Sprintf("%s{\nElemType: %s,\n}", e.List.CustomType.Type, GetElementType(e.List.ElementType))
@@ -83,6 +88,11 @@ func GetElementValueType(e specschema.ElementType) string {
 			return e.Int64.CustomType.ValueType
 		}
 		return "types.Int64"
+	case e.Int32 != nil:
+		if e.Int32.CustomType != nil {
+			return e.Int32.CustomType.ValueType
+		}
+		return "types.Int32"
 	case e.List != nil:
 		if e.List.CustomType != nil {
 			return e.List.CustomType.ValueType
@@ -129,6 +139,8 @@ func GetElementFromFunc(e specschema.ElementType) (string, error) {
 		return "types.Float64PointerValue", nil
 	case e.Int64 != nil:
 		return "types.Int64PointerValue", nil
+	case e.Int32 != nil:
+		return "types.Int32PointerValue", nil
 	case e.List != nil:
 		return "", NewUnimplementedError(errors.New("list element type is not yet implemented"))
 	case e.Map != nil:

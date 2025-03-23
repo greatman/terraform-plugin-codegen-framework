@@ -8,9 +8,9 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/hashicorp/terraform-plugin-codegen-spec/code"
-	"github.com/hashicorp/terraform-plugin-codegen-spec/datasource"
-	specschema "github.com/hashicorp/terraform-plugin-codegen-spec/schema"
+	"github.com/greatman/terraform-plugin-codegen-spec/code"
+	"github.com/greatman/terraform-plugin-codegen-spec/datasource"
+	specschema "github.com/greatman/terraform-plugin-codegen-spec/schema"
 
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/convert"
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/model"

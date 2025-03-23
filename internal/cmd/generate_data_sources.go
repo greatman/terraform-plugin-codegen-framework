@@ -12,8 +12,8 @@ import (
 	"os"
 	"strings"
 
+	"github.com/greatman/terraform-plugin-codegen-spec/spec"
 	"github.com/hashicorp/cli"
-	"github.com/hashicorp/terraform-plugin-codegen-spec/spec"
 
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/datasource"
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/format"

@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/hashicorp/terraform-plugin-codegen-spec/provider"
+	"github.com/greatman/terraform-plugin-codegen-spec/provider"
 
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/convert"
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/model"

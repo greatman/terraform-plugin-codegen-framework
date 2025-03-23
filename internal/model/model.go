@@ -11,6 +11,7 @@ import (
 const (
 	BoolValueType    = "types.Bool"
 	Float64ValueType = "types.Float64"
+	Int32ValueType   = "types.Int32"
 	Int64ValueType   = "types.Int64"
 	ListValueType    = "types.List"
 	MapValueType     = "types.Map"

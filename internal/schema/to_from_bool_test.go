@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/hashicorp/terraform-plugin-codegen-spec/code"
-	"github.com/hashicorp/terraform-plugin-codegen-spec/schema"
+	"github.com/greatman/terraform-plugin-codegen-spec/code"
+	"github.com/greatman/terraform-plugin-codegen-spec/schema"
 )
 
 func TestToFromBool_renderFrom(t *testing.T) {

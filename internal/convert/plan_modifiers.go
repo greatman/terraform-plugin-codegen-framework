@@ -7,8 +7,8 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/hashicorp/terraform-plugin-codegen-spec/code"
-	specschema "github.com/hashicorp/terraform-plugin-codegen-spec/schema"
+	"github.com/greatman/terraform-plugin-codegen-spec/code"
+	specschema "github.com/greatman/terraform-plugin-codegen-spec/schema"
 
 	"github.com/hashicorp/terraform-plugin-codegen-framework/internal/schema"
 )
@@ -16,6 +16,7 @@ import (
 const (
 	PlanModifierTypeBool    PlanModifierType = "Bool"
 	PlanModifierTypeFloat64 PlanModifierType = "Float64"
+	PlanModifierTypeInt32   PlanModifierType = "Int32"
 	PlanModifierTypeInt64   PlanModifierType = "Int64"
 	PlanModifierTypeList    PlanModifierType = "List"
 	PlanModifierTypeMap     PlanModifierType = "Map"
